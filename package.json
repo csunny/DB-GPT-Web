@@ -17,6 +17,8 @@
     "@antv/g2": "^5.1.8",
     "@antv/s2": "^1.51.2",
     "@berryv/g2-react": "^0.1.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@microsoft/fetch-event-source": "^2.0.1",
     "@monaco-editor/react": "^4.5.2",
     "@mui/icons-material": "^5.11.16",
