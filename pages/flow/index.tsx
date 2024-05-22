@@ -69,7 +69,7 @@ function Flow() {
       <div className="mb-4">
         <Link href="/flow/canvas">
           <Button type="primary" className="flex items-center" icon={<PlusOutlined />}>
-            New AWEL Flow
+            {t('new') + ' ' + t('awel_flow')}
           </Button>
         </Link>
       </div>

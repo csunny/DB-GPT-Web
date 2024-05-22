@@ -1,3 +1,9 @@
+/*
+ * @Date: 2024-05-14 15:41:13
+ * @LastEditors: CZH
+ * @LastEditTime: 2024-05-22 18:22:06
+ * @FilePath: /DB-GPT-Web/app/i18n.ts
+ */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -219,6 +225,18 @@ const en = {
   operators: 'Operators',
   Chinese: 'Chinese',
   English: 'English',
+  no: 'No',
+  yes: 'Yes',
+  confirm: 'Confirm',
+  Request_error: 'Request error',
+  new: 'New',
+  Preview: 'Preview',
+  add_knowledge: 'Add Knowledge',
+  Editor: 'Editor',
+  Start_a_conversation: 'Start a conversation',
+  Run: 'Run',
+  Save: 'Save',
+  Select_File: 'Select File',
 } as const;
 
 export type I18nKeys = keyof typeof en;
@@ -228,6 +246,18 @@ export interface Resources {
 }
 
 const zh: Resources['translation'] = {
+  no: '否',
+  yes: '是',
+  new: '新',
+  Run: '执行',
+  Save: '保存',
+  confirm: '确定',
+  Preview: '预览',
+  Editor: '编辑',
+  Select_File: '选择文件',
+  Start_a_conversation: '开始对话',
+  add_knowledge: '新增知识',
+  Request_error: '请求出错',
   Knowledge_Space: '知识库',
   space: '知识库',
   Vector: '向量',

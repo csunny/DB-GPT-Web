@@ -1,3 +1,9 @@
+/*
+ * @Date: 2024-05-14 15:41:13
+ * @LastEditors: CZH
+ * @LastEditTime: 2024-05-22 14:22:00
+ * @FilePath: /DB-GPT-Web/client/api/index.ts
+ */
 import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
 
 export type ResponseType<T = any> = {

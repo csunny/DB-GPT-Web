@@ -204,7 +204,7 @@ const Completion = ({ messages, onSubmit }: Props) => {
               image="/empty.png"
               imageStyle={{ width: 320, height: 320, margin: '0 auto', maxWidth: '100%', maxHeight: '100%' }}
               className="flex items-center justify-center flex-col h-full w-full"
-              description="Start a conversation"
+              description={t('Start_a_conversation')}
             />
           )}
         </div>

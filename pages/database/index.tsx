@@ -159,7 +159,7 @@ function Database() {
                 setModal({ open: true, dbType: draw.type });
               }}
             >
-              Create
+              {t('create')}
             </Button>
             {dbListByType[draw.type].map((item) => (
               <Card

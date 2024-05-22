@@ -69,7 +69,7 @@ const Knowledge = () => {
             setIsAddShow(true);
           }}
         >
-          Create
+          {t('create')}
         </Button>
         <div className="flex flex-wrap mt-4 gap-2 md:gap-4">
           {spaceList?.map((space: ISpace) => (
@@ -78,7 +78,7 @@ const Knowledge = () => {
         </div>
       </div>
       <Modal
-        title="Add Knowledge"
+        title={t('add_knowledge')}
         centered
         open={isAddShow}
         destroyOnClose={true}

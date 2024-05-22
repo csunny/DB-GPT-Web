@@ -1,3 +1,9 @@
+/*
+ * @Date: 2024-05-14 15:41:13
+ * @LastEditors: CZH
+ * @LastEditTime: 2024-05-22 14:10:16
+ * @FilePath: /DB-GPT-Web/pages/models/index.tsx
+ */
 import { apiInterceptors, getModelList } from '@/client/api';
 import ModelCard from '@/components/model/model-card';
 import ModelForm from '@/components/model/model-form';
@@ -40,6 +46,7 @@ function Models() {
         width={800}
         open={isModalOpen}
         title={t('create_model')}
+        cancelText={t('no')}
         onCancel={() => {
           setIsModalOpen(false);
         }}

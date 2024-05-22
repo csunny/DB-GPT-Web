@@ -3,6 +3,7 @@ import { Upload, UploadProps, Button, message, UploadFile, Tooltip } from 'antd'
 import { LinkOutlined, SelectOutlined, UploadOutlined } from '@ant-design/icons';
 import { apiInterceptors, postChatModeParamsFileLoad } from '@/client/api';
 import { ChatContext } from '@/app/chat-context';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   convUid: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 function ExcelUpload({ convUid, chatMode, onComplete, ...props }: PropsWithChildren<Props & UploadProps>) {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -86,7 +88,7 @@ function ExcelUpload({ convUid, chatMode, onComplete, ...props }: PropsWithChild
             {...props}
           >
             <Button className="flex justify-center items-center" type="primary" disabled={loading} icon={<SelectOutlined />}>
-              Select File
+              {t('Select_File')}
             </Button>
           </Upload>
         </Tooltip>
