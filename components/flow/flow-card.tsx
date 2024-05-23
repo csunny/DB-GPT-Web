@@ -59,9 +59,9 @@ const FlowCard: React.FC<FlowCardProps> = ({ flow, onCopy, deleteCallback }) => 
       title: t('Tips'),
       icon: <WarningOutlined />,
       content: t('delete_flow_confirm'),
-      okText: 'Yes',
+      okText: t('yes'),
       okType: 'danger',
-      cancelText: 'No',
+      cancelText: t('no'),
       async onOk() {
         deleteFlow();
       },

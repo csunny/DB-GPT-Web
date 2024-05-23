@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-05-14 15:41:13
  * @LastEditors: CZH
- * @LastEditTime: 2024-05-22 18:22:06
+ * @LastEditTime: 2024-05-23 17:33:01
  * @FilePath: /DB-GPT-Web/app/i18n.ts
  */
 import i18n from 'i18next';
@@ -237,6 +237,20 @@ const en = {
   Run: 'Run',
   Save: 'Save',
   Select_File: 'Select File',
+  No_flow_found: 'No flow found',
+  Label: 'Label',
+  Deploy: 'Deploy',
+  Copy_AWEL_Flow: 'Copy AWEL Flow',
+  Editable: 'Editable',
+  Title: 'Title',
+  Create_Now: 'Create Now',
+  Host: 'Host',
+  Path: 'Path',
+  Delete_Chat: 'Delete Chat',
+  DB_Name: 'DB Name',
+  DB_Type: 'DB Type',
+  Are_you_sure_delete_this_chat: 'Are you sure delete this chat?',
+  Do_you_Want_to_delete_the: 'Do you Want to delete the',
 } as const;
 
 export type I18nKeys = keyof typeof en;
@@ -246,14 +260,27 @@ export interface Resources {
 }
 
 const zh: Resources['translation'] = {
+  Title: '标题',
+  Are_you_sure_delete_this_chat: '确认删除此对话？',
+  Do_you_Want_to_delete_the: '确定删除',
+  Host: '主机',
+  DB_Name: '数据库名称',
+  DB_Type: '数据类型',
+  Path: '路径',
+  Editable: '可编辑',
   no: '否',
   yes: '是',
+  Create_Now: '创建',
   new: '新',
   Run: '执行',
   Save: '保存',
   confirm: '确定',
   Preview: '预览',
   Editor: '编辑',
+  Label: '标签',
+  Deploy: '部署',
+  Copy_AWEL_Flow: '复制 AWEL 工作流',
+  No_flow_found: '暂无数据',
   Select_File: '选择文件',
   Start_a_conversation: '开始对话',
   add_knowledge: '新增知识',
@@ -392,6 +419,7 @@ const zh: Resources['translation'] = {
   input_count: '共计输入',
   input_unit: '字',
   Copy: '复制',
+  Delete_Chat: '删除对话',
   Copy_success: '内容复制成功',
   Copy_nothing: '内容复制为空',
   Copry_error: '复制失败',

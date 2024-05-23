@@ -181,8 +181,8 @@ function SideBar() {
   const handleDelChat = useCallback(
     (dialogue: IChatDialogueSchema) => {
       Modal.confirm({
-        title: 'Delete Chat',
-        content: 'Are you sure delete this chat?',
+        title: t('Delete_Chat'),
+        content: t('Are_you_sure_delete_this_chat'),
         width: '276px',
         centered: true,
         onOk() {

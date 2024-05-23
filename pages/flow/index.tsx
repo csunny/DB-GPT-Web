@@ -77,24 +77,24 @@ function Flow() {
         {flowList.map((flow) => (
           <FlowCard key={flow.uid} flow={flow} deleteCallback={updateFlowList} onCopy={handleCopy} />
         ))}
-        {flowList.length === 0 && <MyEmpty description="No flow found" />}
+        {flowList.length === 0 && <MyEmpty description={t('No_flow_found')} />}
       </div>
       <Modal
         open={showModal}
-        title="Copy AWEL Flow"
+        title={t('Copy_AWEL_Flow')}
         onCancel={() => {
           setShowModal(false);
         }}
         footer={false}
       >
         <Form form={form} onFinish={onFinish} className="mt-6">
-          <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+          <Form.Item name="name" label={t('Name')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="label" label="Label" rules={[{ required: true }]}>
+          <Form.Item name="label" label={t('Label')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item label="Deploy">
+          <Form.Item label={t('Deploy')}>
             <Checkbox
               value={deploy}
               onChange={(e) => {

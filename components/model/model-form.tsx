@@ -66,7 +66,7 @@ function ModelForm({ onCancel, onSuccess }: { onCancel: () => void; onSuccess: (
 
   return (
     <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} onFinish={onFinish} form={form}>
-      <Form.Item label="Model" name="model" rules={[{ required: true, message: t('model_select_tips') }]}>
+      <Form.Item label={t('model')} name="model" rules={[{ required: true, message: t('model_select_tips') }]}>
         <Select showSearch onChange={handleChange}>
           {models?.map((model) => (
             <Option key={model.model} value={model.model} label={model.model} model={model} disabled={!model.enabled}>
@@ -90,7 +90,7 @@ function ModelForm({ onCancel, onSuccess }: { onCancel: () => void; onSuccess: (
           {t('submit')}
         </Button>
         <Button className="ml-10" onClick={onCancel}>
-          Cancel
+          {t('cancel')}
         </Button>
       </div>
     </Form>
