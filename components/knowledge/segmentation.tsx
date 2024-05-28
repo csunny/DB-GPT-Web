@@ -121,7 +121,7 @@ export default function Segmentation(props: IProps) {
 
   function renderStrategy() {
     if (!strategies || !strategies.length) {
-      return <Alert message={`Cannot find one strategy for ${docType} type knowledge.`} type="warning" />;
+      return <Alert message={`Cannot find one strategy for ${docType} type knowledge.`} type="warning" key={docType} />;
     }
     return (
       <Form.List name="fileStrategies">

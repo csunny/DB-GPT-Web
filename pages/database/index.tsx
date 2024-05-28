@@ -46,7 +46,9 @@ function Database() {
     const unSupportDbList = Object.keys(dbMapper)
       .filter((item) => !supportDbList.some((db) => db.value === item))
       .map((item) => ({ ...dbMapper[item], value: dbMapper[item].label, disabled: true })) as DBOption[];
-    return [...supportDbList, ...unSupportDbList];
+    return [...supportDbList, ...unSupportDbList].filter((x) => {
+      return x.icon;
+    });
   }, [dbSupportList]);
 
   const onModify = (item: DBItem) => {
@@ -57,8 +59,8 @@ function Database() {
     Modal.confirm({
       title: t('Tips'),
       content: `${t('Do_you_Want_to_delete_the')} ${item.db_name}?`,
-      okText:t('confirm'),
-      cancelText:t('cancel'),
+      okText: t('confirm'),
+      cancelText: t('cancel'),
       onOk() {
         return new Promise<void>(async (resolve, reject) => {
           try {
