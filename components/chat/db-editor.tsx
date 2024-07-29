@@ -9,6 +9,7 @@ import MonacoEditor from './monaco-editor';
 import { sendGetRequest, sendSpacePostRequest } from '@/utils/request';
 import { useSearchParams } from 'next/navigation';
 import { OnChange } from '@monaco-editor/react';
+import { useTranslation } from 'react-i18next';
 import Header from './header';
 import Chart from '../chart';
 
@@ -93,6 +94,7 @@ function DbEditorContent({ editorValue, chartData, tableData, handleChange }: IP
 }
 
 function DbEditor() {
+  const { t } = useTranslation();
   const [expandedKeys, setExpandedKeys] = React.useState<React.Key[]>([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [currentRound, setCurrentRound] = React.useState<null | string | number>();
@@ -437,7 +439,7 @@ function DbEditor() {
                 }
               }}
             >
-              Run
+              {t('Run')}
             </Button>
             <Button
               loading={submitLoading || submitChartLoading}
@@ -449,7 +451,8 @@ function DbEditor() {
                 }
               }}
             >
-              Save
+              {t('Save')}
+
             </Button>
           </div>
           <div className="flex items-center py-3">

@@ -46,7 +46,9 @@ function Database() {
     const unSupportDbList = Object.keys(dbMapper)
       .filter((item) => !supportDbList.some((db) => db.value === item))
       .map((item) => ({ ...dbMapper[item], value: dbMapper[item].label, disabled: true })) as DBOption[];
-    return [...supportDbList, ...unSupportDbList];
+    return [...supportDbList, ...unSupportDbList].filter((x) => {
+      return x.icon;
+    });
   }, [dbSupportList]);
 
   const onModify = (item: DBItem) => {
@@ -55,8 +57,10 @@ function Database() {
 
   const onDelete = (item: DBItem) => {
     Modal.confirm({
-      title: 'Tips',
-      content: `Do you Want to delete the ${item.db_name}?`,
+      title: t('Tips'),
+      content: `${t('Do_you_Want_to_delete_the')} ${item.db_name}?`,
+      okText: t('confirm'),
+      cancelText: t('cancel'),
       onOk() {
         return new Promise<void>(async (resolve, reject) => {
           try {
@@ -159,7 +163,7 @@ function Database() {
                 setModal({ open: true, dbType: draw.type });
               }}
             >
-              Create
+              {t('create')}
             </Button>
             {dbListByType[draw.type].map((item) => (
               <Card
@@ -207,7 +211,7 @@ function Database() {
                 setModal({ open: true, dbType: draw.type });
               }}
             >
-              Create Now
+              {t('Create_Now')}
             </Button>
           </Empty>
         )}

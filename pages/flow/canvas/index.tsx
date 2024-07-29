@@ -247,11 +247,11 @@ const Canvas: React.FC<Props> = () => {
           onFinish={handleSaveFlow}
           autoComplete="off"
         >
-          <Form.Item label="Title" name="label" initialValue={flowInfo?.label} rules={[{ required: true, message: 'Please input flow title!' }]}>
+          <Form.Item label={t('Title')} name="label" initialValue={flowInfo?.label} rules={[{ required: true, message: 'Please input flow title!' }]}>
             <Input onChange={labelChange} />
           </Form.Item>
           <Form.Item
-            label="Name"
+            label={t('Name')}
             name="name"
             initialValue={flowInfo?.name}
             rules={[
@@ -269,16 +269,16 @@ const Canvas: React.FC<Props> = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item label="Description" initialValue={flowInfo?.description} name="description">
+          <Form.Item label={t('Description')} initialValue={flowInfo?.description} name="description">
             <TextArea rows={3} />
           </Form.Item>
-          <Form.Item label="Editable" name="editable" initialValue={flowInfo?.editable} valuePropName="checked">
+          <Form.Item label={t('Editable')} name="editable" initialValue={flowInfo?.editable} valuePropName="checked">
             <Checkbox />
           </Form.Item>
           <Form.Item hidden name="state">
             <Input />
           </Form.Item>
-          <Form.Item label="Deploy">
+          <Form.Item label={t('Deploy')}>
             <Checkbox
               defaultChecked={flowInfo?.state === 'deployed' || flowInfo?.state === 'running'}
               value={deploy}
@@ -297,10 +297,10 @@ const Canvas: React.FC<Props> = () => {
                   setIsModalVisible(false);
                 }}
               >
-                Cancel
+                {t('cancel')}
               </Button>
               <Button type="primary" htmlType="submit">
-                Submit
+                {t('Submit')}
               </Button>
             </Space>
           </Form.Item>

@@ -79,43 +79,43 @@ function FormDialog({ open, choiceDBType, dbTypeList, editValue, dbNames, onClos
   return (
     <Modal open={open} width={400} title={editValue ? t('Edit') : t('create_database')} maskClosable={false} footer={null} onCancel={onClose}>
       <Form form={form} className="pt-2" labelCol={{ span: 6 }} labelAlign="left" onFinish={onFinish}>
-        <Form.Item name="db_type" label="DB Type" className="mb-3" rules={[{ required: true }]}>
+        <Form.Item name="db_type" label={t('DB_Type')} className="mb-3" rules={[{ required: true }]}>
           <Select aria-readonly={lockDBType} disabled={lockDBType} options={dbTypeList} />
         </Form.Item>
-        <Form.Item name="db_name" label="DB Name" className="mb-3" rules={[{ required: true }]}>
+        <Form.Item name="db_name" label={t('DB_Name')} className="mb-3" rules={[{ required: true }]}>
           <Input readOnly={!!editValue} disabled={!!editValue} />
         </Form.Item>
         {fileDb === true && (
-          <Form.Item name="db_path" label="Path" className="mb-3" rules={[{ required: true }]}>
+          <Form.Item name="db_path" label={t('Path')} className="mb-3" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
         )}
         {fileDb === false && (
           <>
-            <Form.Item name="db_user" label="Username" className="mb-3" rules={[{ required: true }]}>
+            <Form.Item name="db_user" label={t('Username')} className="mb-3" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-            <Form.Item name="db_pwd" label="Password" className="mb-3" rules={[{ required: true }]}>
+            <Form.Item name="db_pwd" label={t('Password')} className="mb-3" rules={[{ required: true }]}>
               <Input type="password" />
             </Form.Item>
-            <Form.Item name="db_host" label="Host" className="mb-3" rules={[{ required: true }]}>
+            <Form.Item name="db_host" label={t('Host')} className="mb-3" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-            <Form.Item name="db_port" label="Port" className="mb-3" rules={[{ required: true }]}>
+            <Form.Item name="db_port" label={t('Port')} className="mb-3" rules={[{ required: true }]}>
               <InputNumber min={1} step={1} max={65535} />
             </Form.Item>
           </>
         )}
 
-        <Form.Item name="comment" label="Remark" className="mb-3">
+        <Form.Item name="comment" label={t('Remark')} className="mb-3">
           <Input />
         </Form.Item>
         <Form.Item className="flex flex-row-reverse pt-1 mb-0">
           <Button htmlType="submit" type="primary" size="middle" className="mr-1" loading={loading}>
-            Save
+            {t('save')}
           </Button>
           <Button size="middle" onClick={onClose}>
-            Cancel
+            {t('cancel')}
           </Button>
         </Form.Item>
       </Form>

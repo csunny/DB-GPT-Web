@@ -38,9 +38,9 @@ export default function DocPanel(props: IProps) {
       title: t('Tips'),
       icon: <WarningOutlined />,
       content: `${t('Del_Document_Tips')}?`,
-      okText: 'Yes',
+      okText: t('yes'),
       okType: 'danger',
-      cancelText: 'No',
+      cancelText: t('no'),
       async onOk() {
         await handleDelete(row);
       },
@@ -195,7 +195,7 @@ export default function DocPanel(props: IProps) {
     return (
       <Empty image={Empty.PRESENTED_IMAGE_DEFAULT}>
         <Button type="primary" className="flex items-center mx-auto" icon={<PlusOutlined />} onClick={handleAddDocument}>
-          Create Now
+          {t('Create_Now')}
         </Button>
       </Empty>
     );
@@ -208,7 +208,7 @@ export default function DocPanel(props: IProps) {
           {t('Add_Datasource')}
         </Button>
         <Button size="middle" className="flex items-center mx-2" icon={<ToolFilled />} onClick={handleArguments}>
-          Arguments
+          {t('Arguments')}
         </Button>
       </Space>
       <Divider />

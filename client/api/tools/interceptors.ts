@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 import { ApiResponse, FailedTuple, SuccessTuple, ResponseType } from '../';
 import { notification } from 'antd';
+import { t } from 'i18next';
 
 /**
  * Response processing
@@ -21,7 +22,7 @@ export const apiInterceptors = <T = any, D = any>(promise: Promise<ApiResponse<T
           return [null, data.data, data, response];
         } else {
           notification.error({
-            message: `Request error`,
+            message: t(`Request_error`),
             description: data?.err_msg ?? 'The interface is abnormal. Please try again later',
           });
         }
@@ -37,7 +38,7 @@ export const apiInterceptors = <T = any, D = any>(promise: Promise<ApiResponse<T
         } catch (e) {}
       }
       notification.error({
-        message: `Request error`,
+        message: t(`Request_error`),
         description: errMessage,
       });
       return [err, null, null, null];

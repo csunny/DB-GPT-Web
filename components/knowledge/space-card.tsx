@@ -27,9 +27,9 @@ export default function SpaceCard(props: IProps) {
       title: t('Tips'),
       icon: <WarningOutlined />,
       content: `${t('Del_Knowledge_Tips')}?`,
-      okText: 'Yes',
+      okText: t('yes'),
       okType: 'danger',
-      cancelText: 'No',
+      cancelText: t('no'),
       async onOk() {
         await apiInterceptors(delSpace({ name: space?.name }));
         getSpaces();

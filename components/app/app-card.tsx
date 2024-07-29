@@ -37,9 +37,9 @@ export default function AppCard(props: IProps) {
       title: t('Tips'),
       icon: <WarningOutlined />,
       content: `do you want delete the application?`,
-      okText: 'Yes',
+      okText: t('yes'),
       okType: 'danger',
-      cancelText: 'No',
+      cancelText: t('no'),
       async onOk() {
         await apiInterceptors(delApp({ app_code: app.app_code }));
         updateApps(isCollected ? { is_collected: isCollected } : undefined);
